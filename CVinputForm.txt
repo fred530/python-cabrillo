@@ -1,0 +1,72 @@
+'line starting with single quote is a comment line
+Transmit: choose 0 or 1 with "@"
+
+@ stx_string
+# my_cq_zone
+# (SPC1 my_state)
+# (serial stx) 
+# (stx_string (SPC1 my_state))
+
+Receive: choose at least 1 with "@" 
+
+# srx_string
+# cqz 
+# (SPC2 state)
+# (serial  srx)
+# (2)(srx_string (SPC2 state))
+'     first n char:
+# 3 county
+# 4 county
+# 5 name
+# (2)(SPC2 state 3 county)
+'   4 county ignored when romer county input
+# (2)(srx_string 4 county)
+'   arrl_sect replaces spc2 state when input
+@ (3)       class     SPC2 statearrl_sect 
+'0123456789012345678901234567890123456789
+
+value appended to front of selected tx field
+'else make value equal "" if not appended 
+myExchangePrefix = 
+'                  .
+'value appended to rear of selected tx field
+myExchangePostfix=  
+'                  .
+longExch18 = Y
+'            .
+cShowRST = N 
+           .
+'<myCall.cv> will be added to the path below
+'this command maynot be portable to second computer
+'because directory indicated maynot be present on another computer
+'back slash works on win 10 and 11. forward slash does not work win 11
+'the trailing slash \ is required
+'for windows 11 reference maybe be OneDrive\Desktop ?
+
+cvSavePath = C:\Users\Owner\Desktop\
+
+'select lines to print with the input: with "@"
+'      "#" print as shown - no input
+@ CONTEST: FD
+@ LOCATION: TN
+@ CALLSIGN: KI4EZC
+# CATEGORY-OPERATOR: SINGLE-OP
+# CATEGORY-TRANSMITTER: ONE
+# CATEGORY-ASSISTED-NOT ASSISTED: NOT ASSISTED
+@ CATEGORY-BAND: ALL
+@ CATEGORY-POWER: QRP
+@ CATEGORY-MODE: CW
+# CATEGORY-STATION: FIXED
+# CLAIMED-SCORE: 
+@ CREATED-BY: qrz logbook and myconvpyTest.py
+@ NAME: fred hamby
+# EMAIL:
+# ADDRESS:
+
+'N typical for QRZ Logbook and LoTW,  Y typical for
+'eQSL formats and only has subset of N capabilities 
+'(upper case only, default rst and others)
+'work zone:
+cHorizontalFormat = N
+                    .			    						    
+<end of control>
